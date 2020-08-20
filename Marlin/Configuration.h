@@ -1,5 +1,5 @@
 
-#define CONFIGURATION_H_VERSION 020006 //Last changed working on 1.3.91
+#define CONFIGURATION_H_VERSION 020006 //Last changed working on 1.3.94
 
 //===========================================================================
 //============================= Artillery Options =========================== 
@@ -14,6 +14,7 @@
   #ifdef BLTOUCH
     #define NOZZLE_TO_PROBE_OFFSET { 31, -31, 0 }   
     #define WAGGSTER_MOD_WIRING //BLTOUCH to Z+ Z_MAX_PIN (D19) Waggster Mod style wiring, comment out to use Z_MIN_PIN (D18)  
+    //#define DISABLE_LED // Print Engineering added 8/2-2020 some users report compatibilty issues with BL Touch and LED enabled
   #endif
 
 /* 3DPRINTBEGINNER Z MIN SENSOR AS ABL BED MESH PROBE MOD */
@@ -59,7 +60,6 @@
 //#define GraphicalLCD // Will work next to MKS TFT
 //#define TMC_2209 // Defaults to TMC2100
 //#define TMC_2208 // Defaults to TMC2100, Print Engineering added 7/26-2020
-//#define DISABLE_LED // Print Engineering added 8/2-2020 some users report compatibilty issues with BL Touch and LED enabled
 //#define SKR13
 //#define SKR14 //Print Engineering added 7/26-2020
 //===========================================================================
