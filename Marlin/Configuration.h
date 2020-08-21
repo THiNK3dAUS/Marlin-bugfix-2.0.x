@@ -12,7 +12,7 @@
 /* Automatic Bed Leveling with BL Touch #define BLTOUCH and associated definitions. Disabling this enables Manual Mesh leveling */
 #define BLTOUCH     
   #ifdef BLTOUCH
-    #define NOZZLE_TO_PROBE_OFFSET { 26, -36, 0 }   
+    #define NOZZLE_TO_PROBE_OFFSET { 26, -36, 2.72 }   
     #define WAGGSTER_MOD_WIRING //BLTOUCH to Z+ Z_MAX_PIN (D19) Waggster Mod style wiring, comment out to use Z_MIN_PIN (D18)  
     //#define DISABLE_LED // Print Engineering added 8/2-2020 some users report compatibilty issues with BL Touch and LED enabled
   #endif
