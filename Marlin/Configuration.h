@@ -10,9 +10,9 @@
 //#define GENIUS 
 
 /* Automatic Bed Leveling with BL Touch #define BLTOUCH and associated definitions. Disabling this enables Manual Mesh leveling */
-//#define BLTOUCH     
+#define BLTOUCH     
   #ifdef BLTOUCH
-    #define NOZZLE_TO_PROBE_OFFSET { 31, -31, 0 }   
+    #define NOZZLE_TO_PROBE_OFFSET { 26, -36, 0 }   
     #define WAGGSTER_MOD_WIRING //BLTOUCH to Z+ Z_MAX_PIN (D19) Waggster Mod style wiring, comment out to use Z_MIN_PIN (D18)  
     //#define DISABLE_LED // Print Engineering added 8/2-2020 some users report compatibilty issues with BL Touch and LED enabled
   #endif
@@ -44,17 +44,17 @@
 //#define THERMISTOR_HISENS_300 
 
 /*OVERRIDE HARDCODED DEFAULTS AND SET YOUR OWN MOTOR STEPS HERE*/
-//#define DEFAULT_AXIS_STEPS_PER_UNIT   { 80.13, 80.18, 400, 455 }
+#define DEFAULT_AXIS_STEPS_PER_UNIT   { 80.13, 80.18, 400, 455 }
 
     /*OVERRIDE HARDCODED DEFAULTS FOR HOTEND PID VALUES, G2 Sidewinder X-1 V3 6/27-2020*/
-    /*#define DEFAULT_Kp 29.12
-    #define DEFAULT_Ki 2.52
-    #define DEFAULT_Kd 84.09//*/
+    #define DEFAULT_Kp 17.229
+    #define DEFAULT_Ki 1.682
+    #define DEFAULT_Kd 44.106//*/
     
     /*OVERRIDE HARDCODED DEFAULTS FOR BED PID VALUES, G2 Sidewinder X-1 V3 6/27-2020*/
-    /*#define DEFAULT_bedKp 47.93 
-    #define DEFAULT_bedKi 8.86 
-    #define DEFAULT_bedKd 172.76//*/
+    #define DEFAULT_bedKp 38.626 
+    #define DEFAULT_bedKi 4.578 
+    #define DEFAULT_bedKd 217.285//*/
 
 /* InsanityAutomation Fork Options:*/
 //#define GraphicalLCD // Will work next to MKS TFT
@@ -136,7 +136,7 @@
 // @section info
 
 // Author info of this build printed to the host during boot and M115
-#define STRING_CONFIG_H_AUTHOR "Print Engineering" // Who made the changes.
+#define STRING_CONFIG_H_AUTHOR "Print Engineering/THINK3dAUS" // Who made the changes.
 //#define CUSTOM_VERSION_FILE Version.h // Path from the root directory (no quotes)
 
 /**
@@ -210,7 +210,7 @@
 
 // Name displayed in the LCD "Ready" message and Info menu
   #ifndef GENIUS
-    #define CUSTOM_MACHINE_NAME "Artillery Sidewinder X1"
+    #define CUSTOM_MACHINE_NAME "Arty 1.3.96"
   #else
     #define CUSTOM_MACHINE_NAME "Artillery Genius"
   #endif
@@ -553,14 +553,14 @@
 #else
   #define HEATER_0_MAXTEMP 300
 #endif
-#define HEATER_1_MAXTEMP 275
+#define HEATER_1_MAXTEMP 295+15
 #define HEATER_2_MAXTEMP 275
 #define HEATER_3_MAXTEMP 275
 #define HEATER_4_MAXTEMP 275
 #define HEATER_5_MAXTEMP 275
 #define HEATER_6_MAXTEMP 275
 #define HEATER_7_MAXTEMP 275
-#define BED_MAXTEMP      150
+#define BED_MAXTEMP      120+10
 
 //===========================================================================
 //============================= PID Settings ================================
@@ -967,7 +967,7 @@
  * When changing speed and direction, if the difference is less than the
  * value set here, it may happen instantaneously.
  */
-//#define CLASSIC_JERK
+#define CLASSIC_JERK
 #if ENABLED(CLASSIC_JERK)
   #define DEFAULT_XJERK 10.0
   #define DEFAULT_YJERK 10.0
@@ -1201,7 +1201,7 @@
 
 // Feedrate (mm/m) for the "accurate" probe of each point
 #ifdef BLTOUCH
-  #define Z_PROBE_SPEED_SLOW (Z_PROBE_SPEED_FAST / 3)
+  #define Z_PROBE_SPEED_SLOW (Z_PROBE_SPEED_FAST / 2)
 #else
   #define Z_PROBE_SPEED_SLOW (Z_PROBE_SPEED_FAST / 2)
 #endif
@@ -1686,7 +1686,7 @@
 
 // Homing speeds (mm/m)
 #define HOMING_FEEDRATE_XY (60*60)
-#define HOMING_FEEDRATE_Z  (20*60)
+#define HOMING_FEEDRATE_Z  (40*60)
 
 // Validate that endstops are triggered on homing moves
 #define VALIDATE_HOMING_ENDSTOPS
